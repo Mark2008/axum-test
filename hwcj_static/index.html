@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hwcj/style.css">
     <title>Document</title>
 </head>
 <body style="background-color: black;">
-    <div style="display:flex; justify-content:center">
-        <div style="display:flex; width:80%; background-color:white; padding:50px">
-            <div id="hohoho" style="width:70%">
-                
+    <main>
+        <div id="main-container">
+            <div id="hohoho">
+                <!-- 여기에 호원키작 뭉탱이가 들어감 -->
             </div>
-            <div style="width:30%">
+            <div id="about">
                 <h3>작품명: 호원 키작 (好園 키少)</h3>
                 <p>작품 해설: 아방가르드. 이 작품은 점점 작아지는 <strong>호원 키작</strong>이라는 텍스트를 통해, 서호원의 키를 관찰자로 하여금 실감하도록 한다. 텍스트는 점점 작아지다가 0으로 수렴하는데, 이는 현실을 적극 투영한 작가의 의지라고 볼 수 있다. </p>
                 <p>하지만 아래로 갈 수록 소멸하는 이 작품에서도 희망을 확인할 수 있는데, 마치 나폴레옹이 하늘에서부터 기준을 삼아 키를 재면 가장 크다고 했던 것처럼, 호원 또한 아래서부터 거꾸로 읽는다면 텍스트의 높이가 점점 커지는 것을 확인할 수 있다. </p>
                 <p>이는 특히 이뭉규가 좋아할 것인데, 사실 폰트 크기가 피보나치수열이다. 사실아님 ㅋ</p>
             </div>
         </div>
-    </div>
+    </main>
     
     <script>
         let parent = document.getElementById("hohoho");
@@ -26,7 +27,9 @@
         for (let i = 100; i > 0; i -= 2) {
             const newDiv = document.createElement("div");
             newDiv.textContent = "호원키작";
-            newDiv.style = `font-size: ${i}px; height: 100px;`;
+            // newDiv.style = `font-size: ${i}px; height: 100px;`;
+            newDiv.style.setProperty("--scale", i);
+            newDiv.classList.add("stylish-text");
 
             parent.appendChild(newDiv);
         }

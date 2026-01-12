@@ -1,0 +1,54 @@
+main {
+    display: flex;
+    justify-content: center;
+}
+
+#main-container {
+    display: flex;
+    width: 80%;
+    background-color: white;
+    padding: 50px;
+}
+
+#hohoho {
+    width: 70%;
+}
+
+#about {
+    width: 30%;
+}
+
+.stylish-text {
+    font-size: calc(var(--scale) * 1px);
+    height: 100px;
+}
+
+/* reactive web design dd */
+
+/* for tablet amado */
+@media (max-width: 768px) {
+    #main-container {
+        flex-direction: column;
+    }
+
+    #hohoho {
+        width: 100%;
+    }
+
+    #about {
+        width: 100%;
+    }
+}
+
+/* for mobile phone amado 22*/
+@media (max-width: 500px) {
+    #main-container {
+        padding: calc(20vw - 50px);
+        width: 100%;
+    }
+
+    .stylish-text {
+        font-size: calc(var(--scale) * 0.2vw);
+        height: 20vw;
+    }
+}
