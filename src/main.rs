@@ -1,5 +1,5 @@
 use axum::{
-    routing::{get},
+    // routing::{get, post},
     // http::StatusCode,
     // Json, 
     Router,
@@ -18,10 +18,14 @@ async fn main() {
     // build our application with a route
     // nest_service: used for static files
     let app = Router::new()
-        .route("/", get(root))
+        // .route("/", get(root))
+        .nest_service(
+            "/", 
+            ServeDir::new("static/main")
+        )
         .nest_service(
             "/hwcj",
-            ServeDir::new("hwcj_static")
+            ServeDir::new("static/hwcj")
         );
 
     // run our app with hyper, listening globally on port 3000
@@ -31,7 +35,7 @@ async fn main() {
     axum::serve(listener, app).await.unwrap();
 }
 
-// basic handler that responds with a static string
-async fn root() -> &'static str {
-    "안경 사세요"
-}
+// // basic handler that responds with a static string
+// async fn root() -> &'static str {
+//     "안경 사세요"
+// }
