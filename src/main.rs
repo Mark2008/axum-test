@@ -10,13 +10,15 @@ use tower_http::trace::TraceLayer;
 
 #[allow(unused_imports)]
 use tracing::{debug, error, info, trace, warn};
-use tracing_subscriber::filter::EnvFilter;
+// use tracing_subscriber::filter::EnvFilter;
+
+// mod yabawi;
 
 #[tokio::main]
 async fn main() {
     // initialize tracing
     tracing_subscriber::fmt()
-        .with_env_filter(EnvFilter::new("debug"))   // for logging all
+        // .with_env_filter(EnvFilter::new("debug"))   // for logging all
         .init();
 
     // build our application with a route

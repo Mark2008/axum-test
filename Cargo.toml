@@ -19,6 +19,6 @@ debug = true
 lto = false
 
 [profile.release]
-opt-level = 2      # for speed. can be maximized with 3
+opt-level = 3
 debug = false
-lto = false        # also for speed. change it to true later.
+lto = true
